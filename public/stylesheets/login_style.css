@@ -1,0 +1,64 @@
+body{
+	background: url(../img/homepage_bg.jpg)  no-repeat;
+	background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+/*#homepage_bg{
+	margin: 58px 0px 0px 623px;
+}*/
+.main{
+    min-width: 1140px;
+    margin: 0 auto;
+}
+#homepage_logo{
+    position: absolute;
+    left: 32%;
+    top: 8%;
+    width: 15.5%;
+}	
+.header{
+    height: 200px;
+    width: 100%;
+}
+
+/*popup content*/
+.signcontent{
+    height:50%;
+    width:30%;
+    position:absolute;/*让节点脱离文档流,我的理解就是,从页面上浮出来,不再按照文档其它内容布局*/
+    top:40%;/*节点脱离了文档流,如果设置位置需要用top和left,right,bottom定位*/
+    left:32%;
+    /*z-index:2;/*个人理解为层级关系,由于这个节点要在顶部显示,所以这个值比其余节点的都大*/
+    background: white;
+}
+
+/*sign in content */
+.signcontent .user_signin_content{
+	width: 800px;
+}
+
+.signcontent .user_signin_content .sig{
+	background:url(../img/titbg.jpg) no-repeat 195px 20px;
+}
+
+.signcontent .user_signin_content .usersignin{
+	padding-left: 245px;
+	height: 60px;
+	line-height: 60px;
+	font: 400 24px/44px;
+	color: #555;
+}
+.signcontent .signinlist li{
+     list-style-type: none; 
+}
+
+.signcontent .signinlist input{
+	padding: 16px 0px 16px 20px;
+    width: 360px;
+    height: 18px;
+    margin-left: 50px;
+    font-size: 18px;
+    border: solid 1px #eeeeee;
+}

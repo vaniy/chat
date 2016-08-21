@@ -1,0 +1,596 @@
+body{
+	background: url(../img/homepage_bg.jpg)  no-repeat;
+	background-size: 100%;
+}
+
+#homepage_bg{
+	margin: 58px 0px 0px 623px;
+}
+
+#homepage_logo{
+	margin: 60px 0px 0px 609px;
+	float: left;
+}	
+
+#search{
+	background: url(../img/search_box_bg.png) no-repeat;
+	position: relative;
+	left: 1057px;
+	top: 158px;
+	height: 72px;
+	width: 479px;
+}
+
+#search .text_box{
+	background: url(../img/text_box.png) no-repeat;
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    width: 238px;
+    height: 37px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+#search .search_box{
+	cursor: pointer;
+	background: url(../img/search_bg.png) no-repeat;
+    position: absolute;
+    left: 261px;
+    top: 18px;
+    width: 76px;
+    height: 33px;
+    border: none;
+    font-size: 20px
+}
+
+#search .sign.in{
+	display: none;
+	cursor: pointer;
+	background: url(../img/sign_bg.png) no-repeat;
+    position: absolute;
+    left: 348px;
+    top: 18px;
+    width: 56px;
+    height: 33px;
+    border: none;
+    font-size: 18px
+}
+
+#search .sign.up{
+	display: none;
+	cursor: pointer;
+	background: url(../img/sign_bg.png) no-repeat;
+    position: absolute;
+    left: 406px;
+    top: 18px;
+    width: 56px;
+    height: 33px;
+    border: none;
+    font-size: 18px
+}
+
+#search .sign.account{
+	display: none;
+	cursor: pointer;
+	background: url(../img/my-account.png) repeat;
+	position: absolute;
+    left: 348px;
+    top: 18px;
+    width: 112px;
+    height: 33px;
+    border: none;
+    font-size: 20px
+}
+
+.tag_female{
+	background-color: #f944af;
+}
+
+.tag_male{
+	background-color: #4dabb1;
+}
+
+#content{
+	width: 1220px;
+	height: 725px;
+	position: relative;
+    top: 221px;
+    left: 363px;
+}
+
+#content .person1_f{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+}
+
+#content .person1_f .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person1_f .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person1_f .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person1_f .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+#content .tag_female{
+	width: 266px;
+	height: 130px;
+/*	background-color: #f944af;*/
+	position: absolute;
+    color: white;
+	font-size: 17px;
+	font-family: cambria;
+}
+
+/*#content .person1_f .tag ul{
+	color: white;
+	font-size: 17px;
+	font-family: cambria;
+}*/
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content .person2_m{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	left: 318px;
+}
+
+#content .person2_m .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person2_m .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person2_m .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person2_m .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+#content  .tag_male{
+	width: 266px;
+	height: 130px;
+/*	background-color: #f944af;*/
+	position: absolute;
+    color: white;
+	font-size: 17px;
+	font-family: cambria;
+}
+
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content .person3_f{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	left: 636px;
+}
+
+#content .person3_f .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person3_f .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person3_f .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person3_f .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content .person4_m{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	left: 954px;
+}
+
+#content .person4_m .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person4_m .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person4_m .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person4_m .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content{
+	width: 1220px;
+	height: 725px;
+	position: relative;
+    top: 221px;
+    left: 363px;
+}
+
+#content .person5_f{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	top: 375px;
+}
+
+#content .person5_f .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person5_f .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person5_f .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person5_f .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content .person6_m{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	left: 318px;
+	top: 375px;
+}
+
+#content .person6_m .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person6_m .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person6_m .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person6_m .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content .person7_f{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	left: 636px;
+	top: 375px;
+}
+
+#content .person7_f .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person7_f .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person7_f .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person7_f .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}
+
+#content .person8_m{
+	width: 266px;
+	height: 350px;
+	position: absolute;
+	left: 954px;
+	top: 375px;
+}
+
+#content .person8_m .head_portrait{
+	width: 266px;
+	height: 220px;
+}
+
+#content .person8_m .name{
+	width: 266px;
+    height: 39px;
+    background: url(../img/name_bg.png) no-repeat;
+    position: absolute;
+    margin: -39px 0px 0px 0px;
+}
+
+#content .person8_m .name p{
+    color: white;
+    font-size: 30px;
+    font-family: cambria;
+    text-align: left;
+    float: left;
+    margin: 3px 0px 0px 10px;
+}
+
+#content .person8_m .page_curl{
+	position: absolute;
+    top: 168px;
+    left: 185px;
+}
+
+#content .message{
+	cursor: pointer;
+	background: url(../img/message.png) no-repeat;
+	width: 25px;
+	height: 21px;
+	border: none;
+    position: absolute;
+    top: 276px;
+    left: 225px;
+}
+
+#content .add_friends{
+	cursor: pointer;
+	background: url(../img/add.png) no-repeat;
+	width: 25px;
+	height: 26px;
+	border: none;
+    position: absolute;
+    top: 311px;
+    left: 225px;
+}

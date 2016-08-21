@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheets/sign_in.css">
+</head>
+<body>
+	<header id="small_logo">
+		<a href="/homepage">
+		<img src="img/small_logo.png" alt="portal" class="logo" />  <!-- niche的logo -->
+		</a>
+	</header>
+
+ <!-- 登录的内容 -->
+	<div id="main_content">
+		<div class="login_icon"></div>
+		<div class="user_signin pad_sig_login" id="login_form">
+			<ul class="sig_list">
+				<li><input placeholder="Email" id="login_name" onkeydown="if(event.keyCode==13) login();" class="sig_ipt" value=""></li>
+				<li><input placeholder="Password" id="login_pass" class="sig_ipt" type="password" onkeydown="if(event.keyCode==13) login();"></li>
+				<li class="sig_else"><span><input type="checkbox" name="sign_user" id="sign_user" value="1">&nbsp;<label for="sign_user">Remember&nbsp;me</label></span><a href="/app/user/getpwd.php" class="wj_pwd">Forget&nbsp;password？</a>&nbsp;<a href="/sign_up">sign&nbsp;up</a></li>
+				<li><a href="javascript:void(0);" class="sig_btn" onkeydown="if(event.keyCode==13) login();" onclick="login();">sign&nbsp;in</a></li>
+			</ul>
+		</div>
+    </div>
+	<script src="/javascripts/jquery-3.0.0.min.js"></script>	
+		<script type="text/javascript">
+			var login = function(){
+					jQuery('.error').html('');
+					var username = $("#login_name").val();
+					var password = $("#login_pass").val();
+					var data = {"Email":username,"upwd":password};
+					$.ajax({
+						url:'/sign_in',
+						type:'post',
+						data:data,
+						success:function(data,status){
+							if(status == 'success'){
+								location.href = 'homepage';
+							}
+						},
+						error:function(data,status){
+							if(status == 'error'){
+								var message = jQuery("<p class=\"error\" style='display:none'>Wrong username or password</p>");
+								var sign = jQuery('.sig_list');
+								sign.after(message);
+								message.fadeIn();
+								// location.href = 'sign_up';
+							}
+						}
+					});
+			}
+		</script>
+</body>
+</html>	

@@ -1,0 +1,198 @@
+body{
+	background: url(../img/perInformation_bg.jpg)  no-repeat;
+	background-size: 100%;
+	font-family: cambria;
+	font-family: 18px;
+}	
+
+header{
+	min-width: 1200px;
+	height: 230px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+}
+
+#small_logo,#add_character{
+	width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+    zoom: 1;
+    clear: both;
+    min-width: 1200px;
+}
+
+#small_logo{  
+    position: absolute;
+    left: 617px;
+    top: 76px;
+}
+
+#add_character{
+	position: relative;
+	left: 50px;
+	top: 180px
+}
+
+#add_character .add{
+    background: url(../img/add_character.png) no-repeat;
+    width: 69px;
+    height: 70px;
+    position: absolute;
+    left: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+#add_character span{
+	  font-size: 32px;
+    position: absolute;
+    left: 667px;
+    top: 10px;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+#homepage_content{
+
+	width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    /* left: 363px; */
+    min-width: 1200px;
+    overflow: hidden;
+}
+
+#homepage_content .person{
+	height: 192px;
+}
+
+#homepage_content .person .head_portrait{
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px #000;
+    margin: 20px 20px 20px 96px;
+	float: left;
+}
+
+#homepage_content .person .infor{
+	font-size: 52px;
+	font-family: cambria;
+}
+
+#homepage_content .person .infor .user_infor{
+    height: 60px;
+    position: relative;
+    top: 40px;
+}
+
+#homepage_content .person .infor .nickname{
+  float:left;
+  margin-left:30px;
+}
+
+#homepage_content .person .infor .female{
+	background: url(../img/female_icon.png)  no-repeat;
+}
+
+#homepage_content .person .infor .male{
+	background: url(../img/male_icon.png)  no-repeat;
+}
+
+#homepage_content .person .infor .sex{
+    width: 45px;
+    height: 80px;
+    float: left;
+    position: relative;
+    /*left: 233px;*/
+    top: 5px;
+}
+
+#homepage_content .person .infor ul{
+    list-style-type: none;
+    color: #9c9c9c;
+    font-size: 33px;
+    text-align: center;
+    position: relative;
+    left: 37px;
+    top: 20px;
+}
+
+#homepage_content .person .infor ul li{
+	float: left;
+	border-radius: 6px;
+	border: solid 2px #9c9c9c;
+	margin: 0 15px 0 0;
+  padding: 0 10px;
+}
+
+#search ul{
+    list-style-type: none;
+    color: #9c9c9c;
+    font-size: 33px;
+    text-align: center;
+    position: relative;
+    left: 37px;
+    top: 20px;
+}
+
+#search ul li{
+	float: left;
+	border-radius: 6px;
+	border: solid 2px #9c9c9c;
+	margin: 0 15px 0 0;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+ #search
+      {
+          display:none;
+          border: solid 2px #9c9c9c;
+          height:35%;
+          width:50%;
+          position:absolute;/*让节点脱离文档流,我的理解就是,从页面上浮出来,不再按照文档其它内容布局*/
+          top:27%;/*节点脱离了文档流,如果设置位置需要用top和left,right,bottom定位*/
+          left:24%;
+          z-index:2;/*个人理解为层级关系,由于这个节点要在顶部显示,所以这个值比其余节点的都大*/
+          background: white;
+            text-align: center;
+      }
+      #over
+      {
+          width: 100%;
+          height: 100%;
+          opacity:0.8;/*设置背景色透明度,1为完全不透明,IE需要使用filter:alpha(opacity=80);*/
+          filter:alpha(opacity=80);
+          display: none;
+          position:absolute;
+          top:0;
+          left:0;
+          z-index:1;
+          background: silver;
+      }
+      
+#search .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+  font-size: 200%;
+}      
+
+#search .title {
+  font-size: 200%;
+  text-align: center;
+}

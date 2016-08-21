@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/per_Information.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style - all.css">
+ </head>
+
+<body>
+	<header>
+		<div  id="small_logo"><a href="/homepage"><img src="img/small_logo.png" class="logo"/></a></div>
+	</header>
+    <!-- <div id="modify">
+    	<a href="" class="modifyInfor">Modify</a>
+    </div> -->
+    <div id="add_pics">
+		<div id="leftBar">
+			<div>
+				<!-- <button class="changeIcon"></button> -->
+				<img src="<%=user.photo && user.photo != '' ? user.photo : 'img/add_large.png'%>" class="avatar"/>    <!-- 头像 -->
+		    </div>
+			<ul class="btn_manu">
+				<!--<li class="manu_1 btn"><button class="perInfor">Personal Information</button></li>-->
+				<li class="manu_2 btn"><button class="accSecur">Account Security</button></li>
+				<li class="manu_3 btn"><button class="sgnOut">Sign Out</button></li>
+			</ul>
+		</div>
+
+		<div id="uploadAvatar">
+			<form class="form-signin" role="form" method="post" enctype='multipart/form-data'>
+			<div class="pic_01 img_first">
+				<img src="<%=user.photo && user.photo != '' ? user.photo : 'img/add_large.png'%>"/>
+				<input type="file" name="main" style="display:none"/>	
+			</div>
+			<div class="rig_pics">
+				<div class="pic_02 img">
+					<img src="<%=user.right1 && user.right1 != '' ? user.right1 : 'img/add_small.png'%>"/>
+					<input type="file" name="right1" style="display:none"/>
+				</div>
+				<div class="pic_03 img">
+					<img src="<%=user.right2 && user.right2 != '' ? user.right2 : 'img/add_small.png'%>"/>
+					<input type="file" name="right2" style="display:none"/>
+				</div>
+			</div>
+			<div class="but_pics">
+				<ul>
+					<li class="pic_04 img">
+						<img src="<%=user.btom1 && user.btom1 != '' ? user.btom1 : 'img/add_small.png'%>"/>
+						<input type="file" name="btom1" style="display:none"/>
+					</li>
+					<li class="pic_05 img">
+						<img src="<%=user.btom2 && user.btom2 != '' ? user.btom2 : 'img/add_small.png'%>"/>
+						<input type="file" name="btom2" style="display:none"/>
+					</li>
+					<li class="pic_06 img">
+						<img src="<%=user.btom3 && user.btom3 != '' ? user.btom3 : 'img/add_small.png'%>"/>
+						<input type="file" name="btom3" style="display:none"/>
+					</li>
+				</ul>
+			</div>
+			<button id="btnSub" class="btn btn-lg btn-primary" style="display:none">上 传</button>
+			</form>
+		</div>
+	</div>
+
+	<div id="perContent">
+		<div class="name">
+			<p>Nickname:<span><%=user.username%></span></p>
+			<input type="text" class="modifyName" />
+		</div>
+
+		<div class="sex">
+			<p>Sex:</p>
+			<div class="modifySex">
+				<label><input type="radio" name="modifySex" value="male" />male</label>
+				<label><input type="radio" name="modifySex" value="female" />female</label>
+			</div>
+		</div>
+		
+		<div class="age">
+			<p>Age:</p>
+			<input type="text" class="modifyAge" />
+		</div>
+
+		<div class="job">
+			<p>Job:</p>
+			<input type="text" class="modifyJob" />
+		</div>
+
+		<div class="self-describing">
+			<p>Self-describing:</p>
+			<input type="text" class="modifyDes" />
+		</div>
+
+		<button class="submit">Submit</button>
+	</div>
+
+	<div id="accContent">
+		<div class="hint">
+			<p>Reset password</p>
+			<hr></hr>
+		</div>
+
+		<div class="modifyPassword">
+			<ul>
+				<li class="list_1">
+					Original Password:<input class="oriPassword" type="text" />
+				</li>
+
+				<li class="list_2">
+					New Password:<input class="newPassword" type="text" />
+				</li>
+
+				<li class="list_3">
+					Confirm Password:<input class="conPassword" type="text" />
+				</li>
+			</ul>
+		</div>
+
+		<button class="subPassword">Submit</button>
+
+	</div>
+
+
+	<!-- <div id="buddyList">
+		<button class="right"></button>
+		<ul class="list">
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+
+			<li>
+				<img src="img/friend_person.png">
+				<span>Demon</span>
+			</li>
+			<hr></hr>
+		</ul>
+		
+	</div> -->
+	
+<script src="/javascripts/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var submit = jQuery(".img img,.img_first img");
+		var hasPropoerty = [];
+		var signOut = jQuery(".sgnOut");
+		var serAcu = jQuery(".accSecur");
+		signOut.click(function(){
+			location.href = "sign_out";
+		});
+		serAcu.click(function(){
+			jQuery("#uploadAvatar").fadeOut();
+			jQuery("#accContent").fadeIn();
+		});
+		if(submit){
+			submit.each(function(){
+				var $this = jQuery(this);
+				$this.click(function(){
+					var $self = jQuery(this);
+					$self.parent().find("input").click();
+					if(hasPropoerty.indexOf($self.parent().attr("class")) != -1){						
+						return;
+					}
+					$self.parent().find("input").change(function(){
+						var flag = true;
+						var ful = $self.parent().find("input").val();
+						var extName = ful.substring(ful.lastIndexOf('.'),ful.length).toLowerCase();
+						if(ful.length == 0){
+							flag = false;
+						}
+						
+						if(extName != '.png' && extName != '.jpg'){
+							flag = false;
+						}
+						
+						if(flag){
+							jQuery("#btnSub").click();
+						}
+					});
+					hasPropoerty.push($self.parent().attr("class"));
+				});
+			});
+		}
+	});
+</script>
+</body>

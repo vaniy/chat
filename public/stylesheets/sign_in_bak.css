@@ -1,0 +1,142 @@
+body{
+	background: url(../img/login_bg.jpg)  no-repeat;
+	background-size: 100%;
+}
+
+#small_logo{
+	margin: 26px 0px 0px 588px;
+	float: left;
+}
+
+#signIn_content .forTitle{
+    background: url(../img/pleaseLogin.png) no-repeat;
+    width: 315px;
+    height: 62px;
+    position: absolute;
+    top: 75px;
+    left: 195px;
+}
+
+.error{
+    float: left;
+    font-size: 20px;
+    color: red;
+    margin-left: 120px;
+}
+
+#signIn_content{
+	background: url(../img/content_bg.png) no-repeat;
+	width: 733px;
+	height: 738px;
+	position: relative;
+	top: 195px;
+	left: 595px;
+}
+
+/*输入用户名*/
+#signIn_content .username{
+    background: url(../img/txt_box.png) no-repeat;
+    width: 499px;
+    height: 79px;
+    border: none;
+    position: absolute;
+    top: 190px;
+    left: 105px;
+    color: white;
+    font-size: 32px;
+    font-family: cambria;
+}
+
+/*密码框*/
+#signIn_content .password{
+    background: url(../img/txt_box.png) no-repeat;
+    width: 499px;
+    height: 79px;
+    border: none;
+    position: absolute;
+    top: 330px;
+    left: 105px;
+    color: white;
+    font-size: 32px;
+    font-family: cambria;
+}
+
+
+/*
+#signIn_content .go{
+    background: url(../img/btnGo.png) no-repeat;
+    width: 96px;
+    height: 77px;
+    position: absolute;
+    top: 331px;
+    left: 511px;
+    border: none;
+}*/
+
+#signIn_content #forPassword{
+    display: block;
+    position: absolute;
+    top: 408px;
+    left: 368px;
+    font-size: 26px;
+    font-family: cambria;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#signIn_content #forSignUp{
+    display: block;
+    position: absolute;
+    top: 452px;
+    left: 473px;
+    font-size: 28px;
+    font-family: cambria;
+}
+
+#signIn_content #remember .switch_off{
+    background: url(../img/switch_off.png) no-repeat; 
+    width: 71px;
+    height: 35px;
+    border: none;
+    position: absolute;
+    top: 450px;
+    left: 142px;
+    cursor: pointer;
+}
+
+#signIn_content #remember .switch_on{
+    background: url(../img/switch_off.png) no-repeat; 
+    width: 71px;
+    height: 35px;
+    border: none;
+    position: absolute;
+    top: 450px;
+    left: 142px;
+    display: none;
+    cursor: pointer;
+}
+
+
+#signIn_content #remember .switch{
+    font-family: MyriaPro-Bold;
+    font-size: 32px;
+    color: #C8C8C8;
+    position: absolute;
+    top: 417px;
+    left: 219px;
+}
+
+#signIn_content .btn_signIn{
+    font-family: cambria;
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 650px;
+    left: 296px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

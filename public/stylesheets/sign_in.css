@@ -1,0 +1,68 @@
+body{
+	background: url(../img/homepage_bg.jpg)  no-repeat;
+	background-size: 100%;
+}
+
+#small_logo{
+    min-width: 1200px;
+    /* margin: 26px 0px 0px 588px; */
+    /* float: left; */
+    position: relative;
+    left: 617px;
+    top: 76px;
+}
+
+#main_content{
+    float: left;
+}
+#main_content .login_icon{
+    background: url(../img/login.png) no-repeat 467px 2px;
+    height: 62px
+}
+
+#main_content{
+    font-family: cambria;
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    left: 393px;
+    top: 293px;
+    /* zoom: 1; */
+    clear: both;
+    min-width: 1200px;
+}
+
+.pad_sig_login{padding:0 0 50px 275px;}
+.pad_sig_register{padding:60px 0 0 400px;}
+.user_signin,.login_icon{width:800px;}
+.user_signin .sig_tit{border: none;padding-left: 150px;height: 60px;line-height: 60px;font: 400 24px/44px 'cambria';color:#555;}
+.user_signin .sig_tit.sig_tit_login{background: url(images/titbg.jpg) no-repeat 100px 4px;}
+.sig_list{list-style-type: none;font-size: 14px;}
+.sig_list li .sig_ipt{width: 376px;padding: 16px 0 16px 20px;color: #555;height: 18px;font:18px/18px 'cambria';outline: none;position: relative;border: solid 1px #eeeeee;border-radius: 4px 4px 0 0;}
+.sig_list li:nth-child(n+1) .sig_ipt{border-bottom:0;}
+.sig_list li:nth-child(n+2) .sig_ipt{border-radius:0;}
+.sig_list li:nth-last-child(3) .sig_ipt{border-bottom:1px solid #eeeeee;}
+.sig_list li.sig_else{margin:15px 0;}
+.sig_list li.sig_else span{color:#555;}
+.sig_list li.sig_else a{color:#5AABD8;}
+.sig_list li.sig_else a.wj_pwd{padding-left:115px;}
+.sig_btn{
+    width: 385px;
+    line-height: 50px;
+    height: 20px;
+    text-align: center;
+    display: block;
+    padding: 16px 0 16px 13px;
+    color: #787878;
+    font: 20px/20px 'cambria';
+    outline: none;
+    border: solid 1px #eeeeee;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.sig_btn:hover{color:#111;}
+.sig_list li.dx_code{position:relative;}
+.sig_list li.dx_code a {color:#5AABD8; position:absolute;left:300px;top:18px;}
+

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/chatstyle.css"></link>
+</head>
+
+<body>
+  <ul class="pages">
+    <li class="login page">
+      <div class="form">
+        <h3 class="title">What's your like</h3>
+        <input class="usernameInput" type="text" maxlength="14" />
+      </div>
+    </li>
+  </ul>
+  <script src="/javascripts/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+        var $window = $(window);
+        var $usernameInput = $('.usernameInput'); // Input for username
+        var $loginPage = $('.login.page'); // The login page
+        var $currentInput = $usernameInput.focus();
+        // Focus input when clicking anywhere on login page
+        $loginPage.click(function () {
+          $currentInput.focus();
+        });
+        $window.keydown(function (event) {
+          // Auto-focus the current input when a key is typed
+          if (!(event.ctrlKey || event.metaKey || event.altKey)) {
+            $currentInput.focus();
+          }
+          // When the client hits ENTER on their keyboard
+          if (event.which === 13) {
+            if ($usernameInput.val() != "") {
+              var data = {"userLike":$usernameInput.val()};
+              $.ajax({
+				      url:'/search',
+				      type:'post',
+				      data:data,
+    			    dataType: 'json',
+				      success:function(data,status){
+					      if(status == 'success'){
+								    location.href = 'homepage';
+					     }
+				      },
+				      error:function(data,status){
+					     if(status == 'error'){
+						      // var message = jQuery("<p class=\"error\">Wrong username or password</p>");
+						      // var sign = jQuery('.forTitle');
+						      // sign.after(message);
+						      // location.href = 'sign_up';
+					     }
+				      }
+			     });
+            }
+          }
+      });
+    });
+  </script>
+</body>
+
+</html>

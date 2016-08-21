@@ -1,0 +1,153 @@
+{
+	"username":"bj23",
+	"phoneNumber":"18817393137",
+	"password":"Newegg@14",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_m.png",
+	"job":"boss",
+	"email":"Barry.S.Jiang@Newegg.com",
+	"sex":"male",
+	"userTab":["basketball","game","coding"],
+	"friendList":"yy42,ls06"
+}
+
+{
+	"username":"yy42",
+	"phoneNumber":"18817393138",
+	"password":"Newegg@13",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_m.png",
+	"job":"boss",
+	"email":"Yi.G.Yang@Newegg.com",
+	"sex":"male",
+	"userTab":["game","coding"],
+	"friendList":"bj23,ls06"
+}
+
+{
+	"username":"ls06",
+	"phoneNumber":"18817393139",
+	"password":"Newegg@12",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_m.png",
+	"job":"boss",
+	"email":"Louis.R.Shen@Newegg.com",
+	"sex":"male",
+	"userTab":["av","game","coding"],
+	"friendList":"yy42,bj23"
+}
+
+{
+	"username":"dd65",
+	"phoneNumber":"18817393140",
+	"password":"Newegg@13",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_m.png",
+	"job":"boss",
+	"email":"Yi.G.Yang@Newegg.com",
+	"sex":"male",
+	"userTab":["game","coding"],
+	"friendList":"bj23,ls06"
+}
+
+{
+	"username":"ll90",
+	"phoneNumber":"18817393141",
+	"password":"Newegg@12",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Louis.R.Shen@Newegg.com",
+	"sex":"female",
+	"userTab":["av","game","coding"],
+	"friendList":"yy42,bj23"
+}
+
+{
+	"username":"hs55",
+	"phoneNumber":"18817393142",
+	"password":"Newegg@13",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Yi.G.Yang@Newegg.com",
+	"sex":"female",
+	"userTab":["game","coding"],
+	"friendList":"bj23,ls06"
+}
+
+{
+	"username":"ft77",
+	"phoneNumber":"18817393143",
+	"password":"Newegg@12",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Louis.R.Shen@Newegg.com",
+	"sex":"female",
+	"userTab":["av","game","coding"],
+	"friendList":"yy42,bj23"
+}
+
+{
+	"username":"uu98",
+	"phoneNumber":"18817393144",
+	"password":"Newegg@13",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Yi.G.Yang@Newegg.com",
+	"sex":"female",
+	"userTab":["game","coding"],
+	"friendList":"bj23,ls06"
+}
+
+{
+	"username":"ts66",
+	"phoneNumber":"18817393145",
+	"password":"Newegg@12",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Louis.R.Shen@Newegg.com",
+	"sex":"female",
+	"userTab":["av","game","coding"],
+	"friendList":"yy42,bj23"
+}
+
+{
+	"username":"tu77",
+	"phoneNumber":"18817393146",
+	"password":"Newegg@13",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Yi.G.Yang@Newegg.com",
+	"sex":"female",
+	"userTab":["game","coding"],
+	"friendList":"bj23,ls06"
+}
+
+{
+	"username":"oo00",
+	"phoneNumber":"18817393147",
+	"password":"Newegg@12",
+	"address":"Newegg",
+	"age":"24",
+	"photo":"img/person_f.png",
+	"job":"boss",
+	"email":"Louis.R.Shen@Newegg.com",
+	"sex":"female",
+	"userTab":["av","game","coding"],
+	"friendList":"yy42,bj23"
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="stylesheets/sign_up.css">
+</head>
+
+<body>
+	<header id="small_logo">
+		<a href="/homepage">
+			<img src="img/small_logo.png" alt="portal" class="logo" />
+			<!-- noche的logo -->
+		</a>
+	</header>
+
+	<div id="main_sign_up">
+		<div class="login_icon"></div>
+		<div class="user_signin pad_sig_register" id="reg_form">
+			<ul class="sig_list">
+				<li>
+					<input placeholder="Email" id="login_mobile" class="sig_ipt"><span class="form_tips" style="display:none;font-size:12px;height:32px;line-height:30px;padding-right:10px;border-right:1px solid #ddd;text-indent:30px;margin:0 10px;"></span>
+				</li>
+				<li class="dx_code">
+					<input placeholder="Nickname" class="sig_ipt" id="code_salt">
+					<!-- <span id="show_msg"><a href="javascript:void(0);" onclick="sendsms();">获取短信验证码</a></span> --><span class="form_tips" style="display:none;font-size:12px;height:32px;line-height:30px;padding-right:10px;border-right:1px solid #ddd;text-indent:30px;margin:0 10px;"></span></li>
+				<li>
+					<input type="password" placeholder="Choose&nbsp;password" id="login_pass" class="sig_ipt"><span class="form_tips" style="display:none;font-size:12px;height:32px;line-height:30px;padding-right:10px;border-right:1px solid #ddd;text-indent:30px;margin:0 10px;"></span>
+				</li>
+				<li>
+					<input type="password" placeholder="Confirm&nbsp;password" id="login_pass_repeat" class="sig_ipt">
+				</li>
+				<li class="gender">
+					Gender:&nbsp;
+					<input type="radio" id="male" value="1" onclick="changeMale()">male&nbsp;
+					<input type="radio" id="female" value="0"onclick="changeFeMale()">female&nbsp;
+				</li>
+				<!--<li><input placeholder="真实姓名" id="true_name" class="sig_ipt" /></li>-->
+				<!--<li><input placeholder="推荐人用户名" id="recommend_uname" class="sig_ipt" /></li>-->
+				<!-- <li class="sig_else"><span><input type="checkbox" id="receive" name="receive" checked="checked" value="1">&nbsp;<label for="receive">我已阅读并同意</label></span><a href="javascript:void(0);">&nbsp;会员注册协议&nbsp;</a>和<a href="javascript:void(0);">&nbsp;隐私保护政策&nbsp;</a></li> -->
+				<li><a href="javascript:void(0);" class="sig_btn">sign&nbsp;&nbsp;&nbsp;&nbsp;up</a></li>
+			</ul>
+			<div class="error">
+			</div>
+		</div>
+	</div>
+	<script src="/javascripts/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		function changeMale(){
+			var femaleBtn = document.getElementById("female");
+			femaleBtn.checked = false;
+		};
+		function changeFeMale(){
+			var maleBtn = document.getElementById("male");
+			maleBtn.checked = false;
+		}
+		$(function(){			
+				$(".sig_btn").click(function(){
+					var ajax = true;
+					var username = $("#code_salt").val();
+					var password = $("#login_pass").val();
+					var cPassword = $("#login_pass_repeat").val();
+					var female = document.getElementById("female");
+					var male = document.getElementById("male");
+					var phoneNumber = $("#login_mobile").val();
+					var error = $(".error");
+					var sex ="";
+					if(female.checked){
+						sex = "female";
+					}
+					else if(male.checked){
+						sex = "male";
+					}
+					var data = {"uname":username,"upwd":password,"pNumber":phoneNumber,"sex":sex};
+					if(username == ""){
+						ajax = false;
+						error.fadeIn();
+						error.text("Username can not be null");
+						error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+						setTimeout(function(){
+							error.fadeOut();
+						},2000);
+					}
+					else if(password == "" || cPassword == ""){
+						ajax = false;
+						error.fadeIn();
+						error.text("password can not be null");
+						error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+						setTimeout(function(){
+							error.fadeOut();
+						},2000);
+					}
+					else if(password.trim() != cPassword.trim()){
+						ajax = false;
+						error.fadeIn();
+						error.text("password should be the same with confirmPassword");
+						error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+						setTimeout(function(){
+							error.fadeOut();
+						},2000);
+					}
+					else if(phoneNumber == ""){
+						ajax = false;
+						error.fadeIn();
+						error.text("email can not be null");
+						error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+						setTimeout(function(){
+							error.fadeOut();
+						},2000);
+					}
+					else if(!female.checked && !male.checked){
+						ajax = false;
+						error.fadeIn();
+						error.text("Gender can not be null");
+						error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+						setTimeout(function(){
+							error.fadeOut();
+						},2000);
+					}
+					
+					// var phoneNumberError = verifyMobile(phoneNumber);
+					// if(phoneNumberError != ''){
+					// 	ajax = false;
+					// 	error.fadeIn();
+					// 	error.text(phoneNumberError);
+					// 	error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+					// 	setTimeout(function(){
+					// 		error.fadeOut();
+					// 	},2000);
+					// }
+					
+					var passwordError = verifyPassword(password);
+					if(passwordError != ""){						
+						ajax = false;
+						error.fadeIn();
+						error.text(passwordError);
+						error.append(jQuery('<span class="bot"></span><span class="top"></span>'));
+						setTimeout(function(){
+							error.fadeOut();
+						},2000);
+					}
+					if(ajax){
+					$.ajax({
+						url:'/sign_up',
+						type:'post',
+						data:data,
+						success:function(data,status){
+							if(status == 'success'){
+								location.href = 'homepage';
+							}
+						},
+						error:function(data,status){
+							if(status == 'error'){
+								jQuery('.error').html("");
+								var message = jQuery("<p class=\"error\">moblie phone are alreay exists</p>");
+								var sign = jQuery('.error');
+								sign.html(message);
+								// location.href = 'sign_up';
+							}
+						}
+					});
+					}
+				});
+				// 判断手机号码
+   				var verifyMobile = function(str) {
+       				var re=/^((\(\d{3}\))|(\d{3}\-))?(13\d{9}|14\d{9}|15\d{9}|17\d{9}|18\d{9})$/i;
+        			if(re.test(str)){
+            			return '';
+        			}else{
+            			return 'error phone number format';
+        			}
+    			};
+				// password
+				var verifyPassword = function(str){
+					if(str.length >= 6 && str.length <= 20){
+						return "";
+					}
+					else{
+						return "password's length should between 6 and 20";
+					}
+				}
+			});
+	</script>
+</body>
+
+</html>

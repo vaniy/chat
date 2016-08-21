@@ -1,0 +1,29 @@
+body{
+	background: url(../img/niche-bg.jpg)  no-repeat;
+	background-size: 100%;
+}
+
+#logo{
+	position: absolute;
+	top:340px;
+	left:582px;
+}
+
+hr{
+	display: block;
+	float: left;
+	margin-top: 493px;
+	width: 1014px;
+}
+
+#txt{
+	position: absolute;
+	top:508px;
+	left:203px;
+}
+
+#arrow{
+	position: absolute;
+	top:820px;
+	left:1700px;
+}

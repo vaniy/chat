@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		<%=title%>
+	</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/homepage_style.css">
+</head>
+
+<body>
+	<header>
+		<div id="small_logo">
+			<a href="/homepage"><img src="img/small_logo.png" alt="portal" class="logo" /></a>
+		</div>
+		<div id="add_character">
+			<a href="javascript:void(0)" class="add"></a>
+			<a href="/perInformation">
+				<img src="img/change_img.png" />
+			</a>
+			<!--<span>hi,&nbsp;<a href="/perInformation"><%=userInfo.uname%></a></span>-->
+		</div>
+	</header>
+
+	<div id="search">
+		<div class="title">
+			<h3>What's Your Like ?</h3>
+		</div>
+		<div class="content">
+			<input class="usernameInput" type="text" maxlength="14" />
+			<ul class="personality">
+				<%if(userInfo != null && userInfo.userTab != null){ %>
+					<% for(var i = 0; i<userInfo.userTab.length;i++){%>
+						<li>
+							<%=userInfo.userTab[i]%>
+						</li>
+						<%}}%>
+			</ul>
+		</div>
+	</div>
+	<div id="over"></div>
+
+	<div id="homepage_content">
+		<% if(data != null && data != "" && data != "firstin"){
+		for(var i =0;i<data.length;i++){%>
+			<div class="person">
+				<div class="head_portrait"><img class="portrait" src="<%= data[i].count >= 2 ? data[i].photo : " img/portrait_question.png "%>" /></div>
+				<div class="infor">
+					<div class="user_infor">
+						<div class="nickname">
+							<a href="javascript:void(0)" class="name" userId="<%=data[i]._id%>">
+								<%=data[i].username%>&nbsp;&nbsp;</a>
+						</div>
+						<div class="sex <%=data[i].sex%>"></div>
+						<span class="age">&nbsp;&nbsp;<%=data[i].age%></span>
+					</div>
+					<ul class="personality">
+						<% for(var j = 0;j<data[i].userTab.length;j++){%>
+							<li>
+								<%=data[i].userTab[j]%>
+							</li>
+							<%
+						if(j>=6){
+							break;
+						}
+					}%>
+					</ul>
+				</div>
+			</div>
+			<hr></hr>
+			<%	}
+	%>
+
+				<%}%>
+	</div>
+	<!-- 朋友列表区域 -->
+	<div id="left_bar">
+		<ul class="friends_list">
+			<% if(friendList != null && friendList.length > 0){
+				for(var i = 0; i < friendList.length; i++){
+				if(friendList[i].friend != null){	
+			%>
+				<li>
+					<div class="fri_head" userId="<%=friendList[i].friend._id%>"><img class="portrait" src="<%=friendList[i].count >= 2 ? friendList[i].friend.photo : 'img/portrait_question.png' %>"
+						/></div>
+					<!-- 头像 -->
+					<!--<img src="img/hint.png" class="mes_hint" />-->
+					<span class="fri_nickname"><%=friendList[i].friend.username%></span>
+					<!-- 昵称 -->
+				</li>
+				<%}}}%>
+		</ul>
+	</div>
+	<!-- 朋友列表区域 -->
+
+	<div id="message">
+		<!-- 聊天界面 -->
+		<!--<div class="mes_ava left">
+			<div class="head_portrait"><img class="portrait" src="img/upload_avatar.jpg" /></div>-->
+		<!-- 头像 -->
+		<!--<div class="mes_ctn">
+				<p class="mes_name">Rebecca</p>-->
+		<!-- 昵称 -->
+		<!--<p class="mes_txt">abcdefghijklmnopRebeccavdvvddasdgfggsgdsg</p>-->
+		<!-- 输入框内容 -->
+		<!--</div>
+		</div>
+
+		<div class="mes_ava right">
+			<div class="head_portrait"><img class="portrait" src="img/upload_avatar.jpg" /></div>-->
+		<!-- 头像 -->
+		<!--<div class="mes_ctn">-->
+		<!-- <p class="mes_name">Rebecca</p> -->
+		<!-- 昵称 -->
+		<!--<p class="mes_txt">abcdefghijklmnopRebecca</p>-->
+		<!-- 输入框内容 -->
+		<!--</div>
+		</div>-->
+		<!-- 以上是聊天气泡 -->
+
+		<!-- 文字输入区域 -->
+		<div class="emoji">
+		</div>
+		<div id="send_message">
+			<ul>
+				<li>
+
+					<button class="face"></button>
+
+				</li>
+				<li>
+					<textarea name="text" id="content" class="enter_txt" cols="22" rows="2" /></textarea>
+				</li>
+				<li>
+					<button class="send">Enter</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script src="/javascripts/jquery-3.0.0.min.js"></script>
+	<!--<script src="/javascripts/jquery.emoji.js"></script>-->
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<!--<script src="/javascripts/jquery.mousewheel-3.0.6.min.js"></script>
+	<script src="/javascripts/jquery.mCustomScrollbar.min.js"></script>-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+		var socket = io();
+		var emoji = jQuery('#send_message .face');
+		var add = jQuery("#add_character .add");
+		var search = jQuery("#search .usernameInput");
+		emoji.click(function(){
+			var dom = "<ul><li>";
+			for(var i = 1; i <= 84; i++){
+				dom = dom + '<a class="{emoji'+i+'}" href="javascript:void(0)"><img src="img/qq/'+i+'.gif"/></a>'
+			}
+			dom = dom + "</li></ul>";
+			jQuery(".emoji").append(jQuery(dom));
+		});
+		add.click(function(){
+			jQuery("#search").show();
+			jQuery("#over").show();
+			search.focus();			
+		});
+		var first = "<%=data%>";
+		if(first == "firstin"){
+			add.click();
+		}
+		search.keyup(function(event){
+			if(event.which === 13){
+				var content = search.val();
+				if(content != ""){
+					content = content.trim();
+					jQuery("#search").hide();
+					search.val("");
+					jQuery("#over").hide();
+					var newContent = jQuery("<li>"+ content +"</li>");
+					jQuery("#search ul").append(newContent);
+					var data = {"userLike":content};
+					$.ajax({
+				      url:'/homepage',
+				      type:'post',
+				      data:data,
+    			      dataType: 'json',
+				      success:function(data,status){
+					      if(status == 'success'){
+							location.href = 'homepage';
+					     }
+				      },
+				      error:function(data,status){
+					     if(status == 'error'){
+						      // var message = jQuery("<p class=\"error\">Wrong username or password</p>");
+						      // var sign = jQuery('.forTitle');
+						      // sign.after(message);
+						      // location.href = 'sign_up';
+					     }
+				      }
+			     });
+				}
+			}
+		});
+		jQuery("#search ul li").each(function(){
+			var $self = jQuery(this);
+			$self.click(function(){
+				var content = $self.text();
+				$self.fadeOut();
+				var data = {"userDislike":content.trim()};
+				$.ajax({
+				      url:'/homepage',
+				      type:'post',
+				      data:data,
+    			      dataType: 'json',
+				      success:function(data,status){
+					      if(status == 'success'){
+							location.href = 'homepage';
+					     }
+				      },
+				      error:function(data,status){
+					     if(status == 'error'){
+						      // var message = jQuery("<p class=\"error\">Wrong username or password</p>");
+						      // var sign = jQuery('.forTitle');
+						      // sign.after(message);
+						      // location.href = 'sign_up';
+					     }
+				      }
+			     });
+			});
+		});
+		var searchContent = jQuery("#homepage_content .nickname .name");
+		searchContent.each(function(){
+			var $self = jQuery(this);
+			$self.click(function(){
+				jQuery("#homepage_content").fadeOut();
+				jQuery("#add_character").fadeOut();
+				// jQuery("#left_bar ul").html('');
+				// jQuery("#message").html('');
+				jQuery("#left_bar").fadeIn();
+				jQuery("#message").fadeIn();
+				var parentId = jQuery(this).attr("userId");
+				var data = {user:parentId};
+				$.ajax({
+					url:'/homepage',
+					type:'post',
+					data:data,
+					dataType:'json',
+					success:function(data,status){
+						if(status == 'success'){
+						 	if(data && data.currentUser){
+								handleUserMessageUI(data.currentUser);
+							}
+							if(data && data.userId){
+								handleUserLeftBar(data.userId);
+							}
+							handleChangeFriend();
+						}
+					}
+				})
+			})
+		})
+		var handleUserMessageUI = function(userList){
+			var dom = "";
+			dom = '<li><div class="fri_head iscurrent" userId='+userList._id+'><img class="portrait" src='+userList.photo+' /></div>'
+				+'<span class="fri_nickname">'+ userList.username +'</span>'
+				+'</li>';
+			jQuery("#left_bar .friends_list").append(jQuery(dom));
+		};
+		
+		var handleUserLeftBar = function(userId){
+			var leftBar = jQuery("#left_bar");
+			leftBar.find("li").each(function(){
+				var $self = jQuery(this);
+				if($self.find(".fri_head").attr("userId") == userId){
+					$self.find(".fri_head").addClass("iscurrent");
+				}
+			});
+			
+		}
+		
+		var handleChangeFriend = function(){
+			var friend = jQuery("#left_bar li");
+			var domArray = new Array();
+			friend.each(function(){
+				var $self = jQuery(this);
+				domArray.push($self.find(".fri_head"));
+				$self.click(function(){
+					for(var i = 0; i < domArray.length; i++){
+						domArray[i].removeClass("iscurrent");
+					}
+					jQuery(this).find(".fri_head").addClass("iscurrent");
+				})
+			})
+		}
+		
+		var send_message = jQuery("#send_message .send");
+		send_message.click(function(){
+			var messageContent = jQuery("#send_message .enter_txt").val();
+			jQuery("#send_message .enter_txt").val('');
+			var user = jQuery("#left_bar .iscurrent");
+			if(user){
+				var userId = user.attr("userId");
+			}
+			if(messageContent && messageContent != "" && user && userId){
+				handleMessageContent("<%=userInfo.uname%>","<%=userInfo.photo%>",messageContent,"right");
+				socket.emit('private',{to_userId:userId,msg:messageContent});
+			}
+		});
+		
+		var handleMessageContent = function(name,photo,msg, position){
+			var fromDom = "";
+			if(position == "left"){
+				fromDom = '<div class="mes_ava left">'
+					+'<div class="head_portrait"><img class="portrait" src='+ photo +' /></div>'
+						+'<div class="mes_ctn">'
+							+'<p class="mes_name">'+ name +'</p>'
+							+'<p class="mes_txt">'+msg+'</p>'
+						+'</div>'
+					+'</div>';
+			}
+			if(position == "right"){
+				fromDom = '<div class="mes_ava right">'
+					+'<div class="head_portrait"><img class="portrait" src='+ photo +' /></div>'
+						+'<div class="mes_ctn">'
+							+'<p class="mes_txt">'+msg+'</p>'
+						+'</div>'
+					+'</div>';
+			}
+			jQuery("#message").append(jQuery(fromDom));
+		}
+		
+		socket.on('private',function(data){
+			debugger;
+        	var msg = data.msg;
+        	var name = data.name;
+			var userId = data.userId;
+			var photo = data.photo;
+			var list = jQuery("#left_bar li");
+			var flag = true;
+			list.each(function(){
+				var $self = jQuery(this);
+				if($self.find(".fri_head").attr("userId") == userId){
+					$self.find(".fri_head").addClass("iscurrent");
+					flag = false;
+				}
+				else{
+					if($self.find(".fri_head").hasClass("iscurrent")){
+						$self.find(".fri_head").removeClass("iscurrent");
+					}
+				}
+			});
+			if(flag){
+				var dom = "";
+				dom = '<li><div class="fri_head iscurrent" userId='+ userId +'><img class="portrait" src="img/portrait_question.png" /></div>'
+				+'<span class="fri_nickname">'+ name +'</span>'
+				+'</li>';
+				jQuery("#left_bar .friends_list").append(jQuery(dom));
+			}
+			handleMessageContent(name,photo,msg,"left");
+      	});
+    });
+	</script>
+</body>
+
+</html>

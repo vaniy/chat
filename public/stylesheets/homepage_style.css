@@ -1,0 +1,531 @@
+body{
+    padding: 0;
+    margin: 0;
+	font-family: cambria;
+	font-family: 18px;
+}	
+
+header{
+    background: url(../img/header_bg.png)  no-repeat;
+	min-width: 1200px;
+	height: 235px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+}
+
+#small_logo,#add_character{
+	width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+    zoom: 1;
+    clear: both;
+    min-width: 1200px;
+}
+
+#small_logo{  
+    position: absolute;
+    left: 617px;
+    top: 76px;
+}
+
+#add_character{
+	position: relative;
+	left: 50px;
+	top: 180px
+}
+
+#add_character .add{
+    background: url(../img/add_character.png) no-repeat;
+    width: 69px;
+    height: 70px;
+    position: absolute;
+    left: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+#add_character span{
+	  font-size: 32px;
+    position: absolute;
+    left: 667px;
+    top: 10px;
+}
+#add_character img{
+    font-size: 32px;
+    position: absolute;
+    left: 1150px;
+    top: 55px;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+#homepage_content{
+
+	width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    /* left: 363px; */
+    min-width: 1200px;
+    overflow: hidden;
+}
+
+#homepage_content .person{
+	height: 192px;
+}
+
+#homepage_content .person .head_portrait{
+	width: 160px;
+	height: 160px;
+	border-radius: 160px;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px #000;
+    margin: 20px 20px 20px 96px;
+	float: left;
+}
+
+#homepage_content .person .infor{
+    font: 52px/52px cambria;
+
+}
+
+#homepage_content .person .infor .user_infor{
+    height: 60px;
+    position: relative;
+    top: 40px;
+}
+
+#homepage_content .person .infor .nickname{
+  float:left;
+  margin-left:30px;
+}
+
+#homepage_content .person .infor .female{
+	background: url(../img/female_icon.png)  no-repeat;
+}
+
+#homepage_content .person .infor .male{
+	background: url(../img/male_icon.png)  no-repeat;
+}
+
+#homepage_content .person .infor .sex{
+    width: 45px;
+    height: 80px;
+    float: left;
+    position: relative;
+    /*left: 233px;*/
+    top: 5px;
+}
+
+#homepage_content .person .infor ul{
+    list-style-type: none;
+    color: #9c9c9c;
+    font-size: 33px;
+    text-align: center;
+    position: relative;
+    left: 37px;
+    top: 30px;
+}
+
+#homepage_content .person .infor ul li{
+	float: left;
+	border-radius: 6px;
+	border: solid 2px #9c9c9c;
+	margin: 0 15px 0 0;
+  padding: 0 10px;
+}
+
+#search ul{
+    list-style-type: none;
+    color: #9c9c9c;
+    font-size: 33px;
+    text-align: center;
+    position: relative;
+    left: 37px;
+    top: 20px;
+}
+
+#search ul li{
+	float: left;
+	border-radius: 6px;
+	border: solid 2px #9c9c9c;
+	margin: 0 15px 0 0;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+ #search
+      {
+          display:none;
+          border: solid 2px #9c9c9c;
+          height:35%;
+          width:50%;
+          position:absolute;/*让节点脱离文档流,我的理解就是,从页面上浮出来,不再按照文档其它内容布局*/
+          top:27%;/*节点脱离了文档流,如果设置位置需要用top和left,right,bottom定位*/
+          left:24%;
+          z-index:2;/*个人理解为层级关系,由于这个节点要在顶部显示,所以这个值比其余节点的都大*/
+          background: white;
+            text-align: center;
+      }
+      #over
+      {
+          width: 100%;
+          height: 100%;
+          opacity:0.8;/*设置背景色透明度,1为完全不透明,IE需要使用filter:alpha(opacity=80);*/
+          filter:alpha(opacity=80);
+          display: none;
+          position:absolute;
+          top:0;
+          left:0;
+          z-index:1;
+          background: silver;
+      }
+      
+#search .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+  font-size: 200%;
+}      
+
+#search .title {
+  font-size: 200%;
+  text-align: center;
+}
+
+/*------------好友列表--------------*/
+#left_bar{
+    position: relative;
+    top: 45px;
+    width: 250px;
+    height: 600px;
+    margin: 0 50px 0 345px;
+    padding: 0 10px 0 0;
+    min-width: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    float: left;
+    display: none;
+/*    overflow: auto; 在需要时内容会自动添加滚动条
+    overflow: scroll; 总是显示滚动条
+    overflow-x: hidden; 禁止横向的滚动条
+    overflow-y: scroll; 总是显示纵向滚动条*/
+}
+
+/*-----好友列表滚动条样式------*/
+#left_bar::-webkit-scrollbar {
+    width: 5px;
+}
+
+#left_bar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    } /* 滚动条的滑轨背景颜色 */
+
+#left_bar::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(201, 201, 201);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    } /* 滑块颜色 */
+
+/*#left_bar::-webkit-scrollbar-button {
+    background-color: #7c2929;
+} *//* 滑轨两头的监听按钮颜色 */
+
+/*#left_bar::-webkit-scrollbar-corner {
+    background-color: black;
+} *//* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+
+/*-----以上是好友列表滚动条样式------*/
+
+#left_bar li{
+    list-style-type: none;
+    padding: 6px 0;
+    border-bottom: 1px dashed #ccc;
+    position: relative;
+}
+
+#left_bar .friends_list{
+    margin: 0;
+    padding: 0;
+}
+
+/*-----头像缩放-----*/
+#left_bar .friends_list .fri_head{
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius:60px;    /*头像圆角*/
+    -moz-border-radius:60px;       /*头像圆角*/
+    overflow: hidden;
+}
+
+#left_bar .friends_list .fri_head .portrait{
+    height: 60px;
+    max-height: 100%!important;
+    width: auto!important;
+}
+/*感觉有点问题，并不适用全部类型的图片，这里适合宽度比高度大的图片*/
+/*-----以上是头像缩放-----*/
+
+#left_bar .friends_list .mes_hint{
+    position: absolute;
+    top: 1px;
+    left: 46px;
+}
+
+#left_bar .friends_list span{
+    font: 23px/25px cambria;
+    color: #5c5c5c;
+    position: absolute;
+    top: 20px;
+    left: 85px;
+}
+/*----------以上是好友列表-----------*/
+
+
+/*-----------聊天框部分------------*/
+#message{
+    width: 800px;
+    height: 600px;
+    padding: 0 25px 0 0;
+    position: relative;
+    top: 45px;
+    /* left: 363px; */
+    min-width: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+}
+
+#message .mes_ava{position: relative;}
+
+#message .left{
+    margin: 0 0 10px 0;
+    clear: right;      /*---important---清除右边部分float右浮动样式*/
+}
+
+#message .left .head_portrait{
+    margin: auto;
+    border-radius: 5px;   
+    float: left;
+}
+
+/*实现头像缩放*/
+#message .head_portrait{
+    width: 60px;
+    height: 50px;
+    -webkit-border-radius:5px;    /*头像圆角*/
+    -moz-border-radius:5px;       /*头像圆角*/
+    overflow: hidden;
+}
+
+#message .head_portrait img{
+    width: 60px;
+    max-width: 100%!important;
+    height: auto!important;
+    /*width:expression(this.width > 60 ? "60px":this.width)!important;*/
+    -webkit-border-radius:5px;    /*头像圆角*/
+    -moz-border-radius:5px;       /*头像圆角*/
+}
+
+/*-------左边的聊天气泡样式----------*/
+
+/*左--添加气泡的左边三角形状*/
+#message .left .head_portrait:before{
+    position: absolute;
+    content: "\00a0";
+    width: 0px;
+    height: 0px;
+    border-width: 7px 15px 7px 0;
+    border-style: solid;
+    border-color: transparent #A6DADC transparent transparent;
+    top: 35px;
+    left: 65px;
+}
+
+/*#message .right .head_portrait:before{  
+    position:absolute;  
+    content:"\00a0";  
+    display:inline-block;  
+    width:0px;  
+    height:0px;  
+    border-width:8px 0px 8px 18px;  
+    border-style:solid;  
+    border-color:transparent transparent transparent #A6DADC;  
+    left:250px;  
+    top:15px;                       
+}*/
+
+#message .left .mes_ctn{
+    margin: 0 0 0 77px;
+}
+
+/*左--对昵称进行的样式变化*/
+#message .left .mes_name{
+    margin: 0 0 2px 0;
+    padding: 0;
+    font: 20px/22px cambria;
+    color: #5c5c5c;
+}
+
+#message .mes_txt{
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #A6DADC;
+    display: inline-block;
+    font: 22px/50px TIMES;
+    text-align: left;
+    max-width: 350px;
+    word-wrap: break-word;
+    line-height: 125%;
+}
+
+
+/*-------右边的聊天气泡样式----------*/
+#message .right{
+    margin: 0 0 10px 0;
+    float: right;
+    clear: right;    /*同理*/
+}
+
+#message .right .head_portrait{
+    margin: auto;
+    border-radius: 5px;   
+    float: right;
+}
+
+/*右--添加气泡的左边三角形状*/
+#message .right .head_portrait:before{  
+    position:absolute;  
+    content:"\00a0";  
+    /*display:inline-block;*/  
+    width:0px;  
+    height:0px;  
+    border-width:7px 0 7px 15px;  
+    border-style:solid;  
+    border-color:transparent transparent transparent #A6DADC;  
+    right:65px;  
+    top:10px;                       
+}
+
+#message .right .mes_ctn{
+    margin: 0 77px 0 0;
+}
+
+/*右--对昵称进行的样式变化*/
+#message .right .mes_name{
+    margin: 0 0 2px 0;
+    padding: 0;
+    font: 20px/22px cambria;
+    color: #5c5c5c;
+}
+
+/*#message .right .mes_txt{
+    float: right;
+}
+*/
+
+/*以下是聊天输入框*/
+#send_message{
+    width: 807px;
+    height: 85px;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0px;
+    background-color: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 2px;
+}
+
+#send_message ul{
+    /*margin: 0 auto;*/
+}
+
+#send_message li{
+    float: left;
+    list-style-type: none;
+}
+
+#send_message .face{
+    background: url(../img/face--.png)  no-repeat;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 5px 0 -26px;
+}
+
+#send_message .enter_txt{   /*输入框*/
+    width: 530px;
+    margin: 0 10px 0 0;
+    padding: 5px 10px;
+    color: #555;
+    height: 42px;
+    font: 18px/22px 'cambria';
+    outline: none;
+    border: solid 1px #cbcbcb;
+}
+
+/*button—Enter按钮样式*/
+#send_message .send{
+    color: #606060;
+    border: solid 1px #b7b7b7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 24px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+/*-------以下是button-Enter的点击样式-------*/
+#send_message .send{
+    color: #606060;
+    border: solid 1px #b7b7b7;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top,  #fff,  #ededed);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+#send_message .send:hover {
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+    background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+#send_message .send:active {
+    color: #999;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+    background: -moz-linear-gradient(top,  #ededed,  #fff);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+}
+/*-------以上是button-Enter的点击样式-------*/
+
+.emoji{
+    position: fixed;
+    bottom: 75px;
+    width: 807px;
+    border: 1px solid #eeeeee;
+}
+
+.emoji ul{
+    list-style: none;
+}

@@ -1,0 +1,262 @@
+body{
+	background: url(../img/perInformation_bg.jpg)  no-repeat;
+	background-size: 100%;
+	font-family: cambria;
+}
+
+#header_logo{
+	margin: 60px 0px 0px 609px;
+	float: left;
+}
+
+#leftBar{
+	font-size: 24px;
+	color: white;
+	width: 266px;
+	height: 740px;
+	position: absolute;
+	left: 373px;
+	top: 280px;
+}
+
+#leftBar .btn_manu{
+	width: 266px;
+	height: 550px;
+	position: absolute;
+	top: 220px;
+}
+
+#leftBar .btn_manu button{
+	cursor: pointer;
+	font-family: cambria;
+	font-size: 24px;
+    background-color: #93a39f;
+    color: white;
+    width: 266px;
+    height: 60px;
+}
+
+#leftBar .btn_manu .perInfor{
+	position: absolute;
+	top: -18px;
+	left: 0px;
+}
+
+#leftBar .btn_manu .accSecur{
+	position: absolute;
+	top: 44px;
+	left: 0px;
+}
+
+#leftBar .btn_manu .sgnOut{
+	position: absolute;
+	top: 106px;
+	left: 0px;
+}
+/*#leftBar .perInfor{
+	width: 266px;
+	height: 60px;
+	position: absolute;
+	top: 230px;
+	background-color: #93a39f
+}
+
+#leftBar .accSecur{
+	width: 266px;
+	height: 60px;
+	position: absolute;
+	top: 292px;
+	background-color: #93a39f;
+}
+
+#leftBar p{
+    margin: 15px;
+}
+*/
+
+#leftBar .changeIcon{
+	background: url(../img/change_img.png)  no-repeat;
+	cursor: pointer;
+	width: 73px;
+	height: 51px;
+	border: none;
+	position: absolute;
+	top: 165px;
+	right: 5px;
+
+}
+
+#modify{                /*修改信息*/
+	font-size: 26px;
+    position: absolute;
+    top: 0px;
+    left: 450px
+	
+    /*display: none;*/
+}
+
+#modify .modifyInfor{
+	text-decoration:none;
+	cursor: pointer;
+	color:black;
+}
+
+#perContent{           /*个人信息内容*/
+	font-size: 28px;
+	color: #444;
+	width: 830px;
+	height: 740px;
+	position: absolute;
+	left: 660px;
+	top: 280px;
+}
+
+#perContent p{
+	padding: 0px;
+	margin: 3px 3px 20px 3px;
+}
+
+#perContent .name .modifyName{
+    position: absolute;
+    top: 4px;
+    left: 130px;
+    width: 300px;
+    height: 26px;
+    display: none;
+}
+
+#perContent .sex .modifySex{
+    position: absolute;
+    top: 54px;
+    left: 55px;
+    display: none;
+}
+
+#perContent .age .modifyAge{
+    position: absolute;
+    top: 110px;
+    left: 60px;
+    width: 300px;
+    height: 26px;
+    display: none;
+}
+
+#perContent .job .modifyJob{
+    position: absolute;
+    top: 164px;
+    left: 60px;
+    width: 300px;
+    height: 26px;
+    display: none;
+}
+
+#perContent .self-describing .modifyDes{
+    position: absolute;
+    top: 256px;
+    left: 4px;
+    width: 500px;
+    height: 200px;
+    display: none;
+}
+
+#perContent .submit{
+	cursor: pointer;
+    position: absolute;
+    left: 208px;
+    top: 489px;
+    width: 80px;
+    height: 37px;
+	display: none;
+}
+
+/*------------隐藏个人信息内容------------*/
+/*#perContent{
+	display: none;
+}*/
+
+#accContent{        /*更换密码*/
+	font-size: 28px;
+	color: #444;
+	width: 830px;
+	height: 740px;
+	position: absolute;
+	left: 660px;
+	top: 280px;
+	display: none;
+}
+
+#accContent .hint p{
+	padding: 0px;
+	margin: 0px;
+}
+
+#accContent .modifyPassword li{
+	list-style-type: none;
+}
+
+#accContent input{
+	width: 300px;
+    height: 26px;
+}
+
+#accContent  .list_1{
+	position: absolute;
+    left: 1px;
+    top: 75px;
+}
+
+#accContent  .list_2{
+	position: absolute;
+    left: 44px;
+    top: 135px;
+}
+
+#accContent  .list_3{
+	position: absolute;
+    left: 1px;
+    top: 185px;
+}
+
+#accContent .subPassword{
+	cursor: pointer;
+    position: absolute;
+    left: 208px;
+    top: 288px;
+    width: 80px;
+    height: 37px;
+}
+
+#buddyList{      /*好友列表*/
+	font-size: 24px;
+	font-family: cambria;
+	width: 375px;
+	height: 845px;
+	background-color: #f5f5f5;
+	border-left: 1px solid #dbd9d9;
+	position: absolute;
+	top: 233px;
+	right: 0px;
+}
+
+#buddyList .list{
+	display: none;
+}
+
+#buddyList .right{
+	cursor: pointer;
+	background: url(../img/arrow-right.png)  no-repeat;
+	width: 38px;
+	height: 27px;
+	position: absolute;
+	top: 0px;
+	right: 375px;
+	border: none;
+}
+
+#buddyList li{
+	list-style-type: none;
+}
+
+#buddyList hr{
+	border: 1px solid #dbd9d9
+}

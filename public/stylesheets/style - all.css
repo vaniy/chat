@@ -1,0 +1,33 @@
+body{
+    padding: 0;
+    margin: 0;
+	font-family: cambria;
+	font-family: 18px;
+}
+
+header{
+    background: url(../img/header_bg.png)  no-repeat;
+	min-width: 1200px;
+	height: 235px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+}
+
+#small_logo{
+	width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    zoom: 1;
+    clear: both;
+    min-width: 1200px;
+}
+
+#small_logo{  
+    position: absolute;
+    left: 617px;
+    top: 76px;
+}
